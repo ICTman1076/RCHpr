@@ -4,7 +4,7 @@
   the Start Menu, type in <code>cmd.exe</code> and press Enter.</li>
 <li>Run <code>git clone https://github.com/ICTman1076/RCHpr.git</code>
   to download the repo</li>
-<li>Run <code>cd SimplePresence</code> to go to the folder</li>
+<li>Run <code>cd RCHpr</code> to go to the folder</li>
 <li>Run (Windows only) <code>copy config.json.example config.json</code> or
   (on macOS/Linux) <code>cp config.json.example config.json</code> to initialise
    the configuration</li>
@@ -12,10 +12,20 @@
 <li>Open a file browser - this could be Finder on Mac or Windows Explorer</li>
 <li>Now, go to the folder where SimplePresence was downloaded</li>
 <li>Open <code>config.json</code> with the Atom app</li>
-<li>If you'd like different default text, change the values of the stuff inside
+<li>Many settings in config.json are very broken due to the new preset feature.
+  To add presets, follow the examples given in the games array - <code>name</code>
+  is what will be displayed, <code>code</code> (which must be all lower case) should
+  be unique, and will also display the images you set up in the discord rich presence
+  developer section, where the name is the same as <code>code</code>.
+  <!--If you'd like different default text, change the values of the stuff inside
    <code>textConfig</code>. For example, changing <code>state</code> to "hi"
-   will make "hi" be the text used by default on the start of SimplePresence.
+   will make "hi" be the text used by default on the start of SimplePresence.-->
  </li>
+<li><strong>IMPORTANT: At the bottom there is a "clientID". This is currently set
+to a test id owned by me and so is unreliable. If you want your own, create a
+rich presence app as shown <a href="https://www.youtube.com/embed/MHKbUTkjnxs">here</a>
+and use the client ID generated from that.</strong> If you do create your own
+you can upload your own images, instead of suffering with mine lol</li>
 <li>Save <code>config.json</code> and close Atom</li>
 <li>Make sure <strong>Discord</strong> is running (only one - you can't have
   more than one open!)</li>
