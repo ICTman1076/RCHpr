@@ -35,12 +35,12 @@ function createWindow() {
     show: false
   });
 
-  if (config.imageConfig.showButton == true) {
+  if (config.customConfig.imageConfig.showButton == true) {
     var height = height + 40
     mainWindow.setSize(width, height);
   }
 
-  if (config.timeConfig.timeType !== 'none') {
+  if (config.customConfig.timeConfig.timeType !== 'none') {
     var height = height + 60
     mainWindow.setSize(width, height);
   }
@@ -86,11 +86,25 @@ async function setActivity() {
     return;
 
   var ltext = await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("ltext")[text];')
-  var details = await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("details")[text];')
+  var details = await mainWindow.webContents.executeJavaScript('document.getElementById("details").value;');
   var state = await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("state")[text];')
   var stext = await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("stext")[text];')
   var lkey = await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("lkey")[text];')
   var skey = await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("skey")[text];')
+
+  if(details=="¬custom"){
+    details=await mainWindow.webContents.executeJavaScript('var text = "textContent" in document.body ? "textContent" : "innerText";document.getElementById("customdetails")[text];')
+  }
+  else if (details.charAt(0)=="¦") {
+    for (i in config.games){
+      var ii=config.games[i];
+      if ("¦"+ii.code==details){
+        details = ii.name;
+        lkey = ii.code;
+        skey = ii.code;
+      }
+    }
+  }
 
   var activity = {
     details: details,
@@ -109,13 +123,13 @@ async function setActivity() {
     var openTimestamp = new Date();
   }
 
-  if (config.timeConfig.timeType == 'start') {
-    activity.startTimestamp = moment(openTimestamp).add(parse('-' + config.timeConfig.whatTime), 'ms').toDate();
-  } else if (config.timeConfig.timeType == 'end') {
-    activity.endTimestamp = moment(openTimestamp).add(parse(config.timeConfig.whatTime), 'ms').toDate();
-  } else if (config.timeConfig.timeType == 'both') {
+  if (config.customConfig.timeConfig.timeType == 'start') {
+    activity.startTimestamp = moment(openTimestamp).add(parse('-' + config.customConfig.timeConfig.whatTime), 'ms').toDate();
+  } else if (config.customConfig.timeConfig.timeType == 'end') {
+    activity.endTimestamp = moment(openTimestamp).add(parse(config.customConfig.timeConfig.whatTime), 'ms').toDate();
+  } else if (config.customConfig.timeConfig.timeType == 'both') {
     activity.startTimestamp = moment(openTimestamp).add(parse('0s'), 'ms').toDate();
-    activity.endTimestamp = moment(openTimestamp).add(parse(config.timeConfig.whatTime), 'ms').toDate();
+    activity.endTimestamp = moment(openTimestamp).add(parse(config.customConfig.timeConfig.whatTime), 'ms').toDate();
   }
   rpc.setActivity(activity);
 }
@@ -126,6 +140,7 @@ rpc.on('ready', () => {
   setInterval(() => {
     setActivity();
   }, 15e3);
+
 });
 
 rpc.login(ClientId).catch(console.error);

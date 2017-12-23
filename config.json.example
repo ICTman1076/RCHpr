@@ -1,40 +1,47 @@
 {
-  "textConfig": {
-    "details": "working on a bot",
-    "state": "adding more support"
-  },
-  "imageConfig": {
-    "smallKey": "nodejs",
-    "largeKey": "brackets",
-    "smallText": "node.js",
-    "largeText": "programming",
-    "showButton": true
-  },
-  "timeConfig": {
-    "timeType": "none",
-    "whatTime": "0s"
-  },
-  "serviceConfig": {
-    "whichService": "none",
-    "titlePrefix": "",
-    "artistPrefix": "",
-    "useUserInterface": true,
-    "useTimestamps": true,
-    "customClientID": "none",
-    "IMDB": {
-      "defaultID": "tt3659388"
+  "games":[
+    {"name": "Watch_Dogs", "code":"wdogs"},
+    {"name": "Assassin's Creed IV", "code":"acreediv"}
+  ],
+
+  "customConfig": {
+    "textConfig": {
+      "details": "Not doing much tbh",
+      "state": "perhaps procrastinating, idk"
     },
-    "FooBar2000": {
-      "txtLocation": ""
+    "imageConfig": {
+      "smallKey": "default",
+      "largeKey": "default",
+      "smallText": "Powered by RCHpr",
+      "largeText": "Powered by RCHpr",
+      "showButton": true
     },
-    "YouTube": {
-      "browser": "safari"
+    "timeConfig": {
+      "timeType": "none",
+      "whatTime": "0s"
     },
-    "lastFM": {
-      "key": "",
-      "secret": "",
-      "username": ""
+    "serviceConfig": {
+      "whichService": "none",
+      "titlePrefix": "",
+      "artistPrefix": "",
+      "useUserInterface": true,
+      "useTimestamps": true,
+      "customClientID": "none",
+      "IMDB": {
+        "defaultID": "tt3659388"
+      },
+      "FooBar2000": {
+        "txtLocation": ""
+      },
+      "YouTube": {
+        "browser": "safari"
+      },
+      "lastFM": {
+        "key": "",
+        "secret": "",
+        "username": ""
+      }
     }
   },
-  "clientID": "340755371629215744"
+  "clientID": "392378784336052226"
 }

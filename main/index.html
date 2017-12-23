@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rich Presence Manager</title>
+  <title>RCHpr</title>
   <link href="style.css" rel="stylesheet">
 </head>
 
@@ -11,23 +11,29 @@
   <br>
   <br>
   <div id="emoji">
-    🎉
+    💬 RCHpr
   </div>
   <div class="center low">
-    <div id="divtime">
+    <!--<div id="divtime">
       <h6>timeConfig.whatTime</h6>
       <h2 id="time">placeholder</h2>
-    </div>
-    <h6>textConfig.details</h6>
-    <h2 contenteditable="true" id="details">placeholder</h2>
-    <h6>textConfig.state</h6>
-    <h2 contenteditable="true" id="state">placeholder</h2>
+    </div>-->
+    <h6>Game:</h6>
+    <h2>
+      <select id="details" onchange="dropdownChange()">
+        <option>Not playing anything yet</option>
+        <option value="¬custom">Set my own...</option>
+      </select>
+    </h2>
+    <h2 contenteditable="true" id="customdetails" class="custom"></h2>
+    <h6>Details:</h6>
+    <h4 contenteditable="true" id="state">placeholder</h2>
     <div class="table">
-      <div class="item">
+      <div class="item custom">
         <h6>imageConfig.smallKey</h6>
         <h2 contenteditable="true" id="skey">placeholder</h2>
       </div>
-      <div class="item">
+      <div class="item custom">
         <h6>imageConfig.largeKey</h6>
         <h2 contenteditable="true" id="lkey">placeholder</h2>
       </div>
@@ -35,16 +41,16 @@
 
     <div class="table">
       <div class="item">
-        <h6 id="fou">imageConfig.smallText</h6>
+        <h6 id="fou">Small image tooltip</h6>
         <h2 contenteditable="true" id="stext">placeholder</h2>
       </div>
       <div class="item">
-        <h6>imageConfig.largeText</h6>
+        <h6>Large image tooltip</h6>
         <h2 contenteditable="true" id="ltext">placeholder</h2>
       </div>
     </div>
 
-    <h3 id="button"><a href="#" onclick="upload()">upload images</a></h3>
+    <!--<h3 id="button"><a href="#" onclick="upload()">upload images</a></h3>-->
   </div>
   <script src="renderer.js">
   </script>
