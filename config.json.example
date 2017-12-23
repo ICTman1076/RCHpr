@@ -1,7 +1,8 @@
 {
   "games":[
     {"name": "Watch_Dogs", "code":"wdogs"},
-    {"name": "Assassin's Creed IV", "code":"acreediv"}
+    {"name": "Assassin's Creed IV", "code":"acreediv"},
+    {"name": "Coding", "code":"coding"}
   ],
 
   "customConfig": {

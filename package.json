@@ -1,17 +1,17 @@
 {
-  "name": "SimplePresence",
-  "version": "2.3.0",
-  "description": "An easy and simple way to set your Discord Rich Presence Status through RPC!",
+  "name": "RCHpr",
+  "version": "2.5.0",
+  "description": "Set your Discord Rich Presence Status quickly through RPC!",
   "main": "main/main.js",
-  "author": "dotJS",
-  "license": "MIT",
-  "homepage": "https://github.com/justdotJS/SimplePresence#readme",
+  "author": "ICTman1076, dotJS",
+  "license": "GPL v2.0",
+  "homepage": "https://ictman1076.github.io/RCHpr/",
   "bugs": {
-    "url": "https://github.com/justdotJS/SimplePresence/issues"
+    "url": "https://github.com/ICTman1076/RCHpr/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/justdotJS/SimplePresence.git"
+    "url": "git+https://github.com/ICTman1076/RCHpr.git"
   },
   "scripts": {
     "start": "electron main/main.js",
