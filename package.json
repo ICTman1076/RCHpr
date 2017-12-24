@@ -4,7 +4,7 @@
   "description": "Set your Discord Rich Presence Status quickly through RPC!",
   "main": "main/main.js",
   "author": "ICTman1076, dotJS",
-  "license": "GPL v2.0",
+  "license": "GPL-2.0",
   "homepage": "https://ictman1076.github.io/RCHpr/",
   "bugs": {
     "url": "https://github.com/ICTman1076/RCHpr/issues"
